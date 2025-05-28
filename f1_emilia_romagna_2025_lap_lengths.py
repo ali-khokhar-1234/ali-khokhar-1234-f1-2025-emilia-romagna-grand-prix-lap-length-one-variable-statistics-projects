@@ -72,7 +72,7 @@ def main():
         another_racer = input("Choose another racer? (Y/N): ")
 
         if not another_racer.upper() == "Y":
-            break
+            is_running = False
 
 
 if __name__ == "__main__":
