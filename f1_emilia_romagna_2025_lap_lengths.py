@@ -2,12 +2,10 @@ import numpy
 
 
 def main():
+    is_running = True
 
     racers = ("Piastri", "Russell", "Norris", "Leclerc", "Hamilton", "Verstappen", "Albon", "Tsunoda")
-
     print(racers)
-
-    is_running = True
 
     while is_running:
         racer = input("Choose a racer: ")
@@ -77,3 +75,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
