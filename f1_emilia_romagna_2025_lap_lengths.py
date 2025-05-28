@@ -11,36 +11,43 @@ def main():
         racer = input("Choose a racer: ")
         print()
         if racer.capitalize() == "Piastri":
-            from piastri_stats import piastri_lap_lengths
+            from stats_piastri import piastri_lap_lengths
             laps = piastri_lap_lengths
         elif racer.capitalize() == "Russell":
-            from russell_stats import russell_lap_lengths
+            from stats_russell import russell_lap_lengths
             laps = russell_lap_lengths
         elif racer.capitalize() == "Norris":
-            from norris_stats import norris_lap_lengths
+            from stats_norris import norris_lap_lengths
             laps = norris_lap_lengths
         elif racer.capitalize() == "Leclerc":
-            from leclerc_stats import leclerc_lap_lengths
+            from stats_leclerc import leclerc_lap_lengths
             laps = leclerc_lap_lengths
         elif racer.capitalize() == "Hamilton":
-            from hamilton_stats import hamilton_lap_lengths
+            from stats_hamilton import hamilton_lap_lengths
             laps = hamilton_lap_lengths
         elif racer.capitalize() == "Verstappen":
-            from verstappen_stats import verstappen_lap_lengths
+            from stats_verstappen import verstappen_lap_lengths
             laps = verstappen_lap_lengths
         elif racer.capitalize() == "Albon":
-            from albon_stats import albon_lap_lengths
+            from stats_albon import albon_lap_lengths
             laps = albon_lap_lengths
         elif racer.capitalize() == "Tsunoda":
-            from tsunoda_stats import tsunoda_lap_lengths
+            from stats_tsunoda import tsunoda_lap_lengths
             laps = tsunoda_lap_lengths
 
         print()
         laps.sort()
-        num_of_laps = len(laps)
-        total_len_laps = sum(laps)
+
+        # RANGE
+
+        shortest_lap = min(laps)
+        longest_lap = max(laps)
+        print(f"{racer.capitalize()}'s shortest recorded lap was {shortest_lap} seconds.")
+        print(f"{racer.capitalize()}'s longest recorded lap was {longest_lap} seconds.")
 
         # MEAN
+        num_of_laps = len(laps)
+        total_len_laps = sum(laps)
         mean = total_len_laps/num_of_laps
 
         print(f"The average of {racer.capitalize()}'s laps was approximately {mean:.2f} seconds.")
